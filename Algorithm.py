@@ -41,10 +41,10 @@ def create_search_data(phrase, slots):
 
         # Проходимся по всем возможным фразам для этого варианта и возвращаем их
         for my_phrase in mix(strng_parts, slots):
-            yield my_phrase
+            yield my_phrase.lower()
     # Если нет подвариантов
     else:
-        yield phrase
+        yield phrase.lower()
 
 
 # Это lazy-search, если в двух местах программы убрать .lower(), будет обычный
